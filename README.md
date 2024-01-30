@@ -6,12 +6,12 @@ I created this project to build other projects and learn more about OpenAI API.
 
 ## Index
 
-- [**Agent**](#agent): A wrapper around OpenAI ChatCompletion API.
+- [**Agent**](#agent-1): A wrapper around OpenAI ChatCompletion API.
 - [**Ability**](#ability): A class that defined the agent abilities also it is a wrapper
   around the tools feature in OpenAI API.
 - [**Message**](#message): My custom definition of ChatCompletion API messages.
 - [**MessagesContainer**](#messagescontainer): To manage many **Message** objects.
-- [**magic**](#magic): A decorator that creates an Agent alias for any function.
+- [**magic**](#magic-function): A decorator that creates an Agent alias for any function.
 - [**audio**](#audio): A wrapper functions around OpenAI Whisper and TTS engine APIs.
 
 Examples:
