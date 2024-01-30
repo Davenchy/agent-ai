@@ -4,14 +4,19 @@ A collection of classes as a wrapper around OpenAI package.
 
 I created this project to build other projects and learn more about OpenAI API.
 
-## Features
+## Index
 
-- **Agent**: A wrapper around OpenAI ChatCompletion API.
-- **Ability**: A class that defined the agent abilities also it is a wrapper
+- [**Agent**](#agent): A wrapper around OpenAI ChatCompletion API.
+- [**Ability**](#ability): A class that defined the agent abilities also it is a wrapper
   around the tools feature in OpenAI API.
-- **Message**: My custom definition of ChatCompletion API messages.
-- **magic**: A decorator that creates an Agent alias for any function.
-- **audio**: A wrapper functions around OpenAI Whisper and TTS engine APIs.
+- [**Message**](#message): My custom definition of ChatCompletion API messages.
+- [**MessagesContainer**](#messagescontainer): To manage many **Message** objects.
+- [**magic**](#magic): A decorator that creates an Agent alias for any function.
+- [**audio**](#audio): A wrapper functions around OpenAI Whisper and TTS engine APIs.
+
+Examples:
+
+- [**Storyteller**](#storyteller): Shows how to use **magic functions**.
 
 ## Usage:
 
@@ -93,7 +98,7 @@ msg.content  # "Hello, World!"
 
 ### MessagesContainer
 
-This object is used to manager many **Message** objects.
+This object is used to manage many **Message** objects.
 It also represents the chat history for an **Agent**.
 
 It takes an optional list of **Message** objects.
