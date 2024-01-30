@@ -17,13 +17,13 @@ I created this project to build other projects and learn more about OpenAI API.
 
 ### Agent
 
-Agent class takes:
+**Agent** class takes:
 
-- instructions: str, required = The agent system instructions
-- model: str or AgentModelName, optional = The model name to use, defaults to "gpt-3.5-turbo-1106".
-- temperature: float, optional = The model temperature to use, defaults to 1.0 (0.0 - 2.0), for more details check the OpenAI API documentation.
-- name: str, optional = The name of the agent.
-- messages: MessagesContainer, optional = A container that holds a list of Message objects which represents the history of the conversation.
+- **instructions**: str, required = The agent system instructions
+- **model**: str or **AgentModelName**, optional = The model name to use, defaults to "gpt-3.5-turbo-1106".
+- **temperature**: float, optional = The model temperature to use, defaults to 1.0 (0.0 - 2.0), for more details check the OpenAI API documentation.
+- **name**: str, optional = The name of the agent.
+- **messages**: MessagesContainer, optional = A container that holds a list of Message objects which represents the history of the conversation.
 
 To set the **OpenAI** access token:
 
@@ -119,18 +119,18 @@ It is a wrapper around the tools feature in OpenAI API.
 
 Ability takes:
 
-- func: AbilityFn, required = The ability logic which is a function that returns a string as ability response(output).
-- name: str, required = The ability name.
-- description: str, required = The ability description, it should describe what the ability does and why to use it.
-- arguments: AbilityArgument[], optional = A list of ability arguments.
+- **func**: **AbilityFn**, required = The ability logic which is a function that returns a string as ability response(output).
+- **name**: str, required = The ability name.
+- **description**: str, required = The ability description, it should describe what the ability does and why to use it.
+- **arguments**: **AbilityArgument**[], optional = A list of ability arguments.
 
-AbilityArgument takes:
+**AbilityArgument** takes:
 
-- name: str, required = the ability argument name
-- type: str, required = the ability argument type, it should describe what the argument data type is: string, number, boolean, object, array, null.
-- description: str, required = the ability argument description, it should describe what the argument is.
-- is_required: bool, optional = if this ability argument is required, default is **False**
-- values: str[], optional = a list of possible values, if you want to define an argument that takes a specific values (like enums).
+- **name**: str, required = the ability argument name
+- **type**: str, required = the ability argument type, it should describe what the argument data type is: `string, number, boolean, object, array, null`.
+- **description**: str, required = the ability argument description, it should describe what the argument is.
+- **is_required**: bool, optional = if this ability argument is required, default is `False`.
+- **values**: str[], optional = a list of possible values, if you want to define an argument that takes a specific values (like `enums`).
 
 The ability logic function
 
@@ -200,7 +200,7 @@ agent["get_environment_variable"] = ability
 
 ### Magic Function
 
-**magic** is a decorator that creates an Agent alias from instruction functions.
+**magic** is a decorator that creates an **Agent** alias from instruction functions.
 
 You can pass some arguments to the **Agent** object like:
 
@@ -237,26 +237,26 @@ This module contains some wrapper functions around OpenAI Whisper and TTS engine
 
 - **play_audio**: Play an audio file.
 
-  - path: str, required: The audio file path to play.
+  - **path**: str, required: The audio file path to play.
 
 - **audio_to_text**: Convert an audio file to text. **Returns a string**.
 
-  - path: str, required: The audio file path to convert.
-  - language: str, optional: The language of the audio file.
-    Recommended to use [ISO-639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes)
-  - prompt: str, optional: The prompt to use.
+  - **path**: str, required: The audio file path to convert.
+  - **language**: str, optional: The language of the audio file.
+    **Recommended** to use [ISO-639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes)
+  - **prompt**: str, optional: The prompt to use.
 
 - **text_to_audio**: Convert text to an audio file.
-  - text: str, required: The text to convert.
-  - path: str, required: The audio file path to save.
-  - model: TTS_MODEL, optional: The TTS model to use.
-    [tts-1, tts-1-hd]
-  - voice: TTS_VOICE, optional: The TTS voice to use.
-    [alloy, echo, fable, onyx, nova, shimmer]
-  - format: FILE_FORMAT, optional: The format of the audio file.
-    [mp3, opus, aac, flac]
-  - speed: float, optional: The speed of the audio file.
-    Value Range: [0.25, 4.0]
+  - **text**: str, required: The text to convert.
+  - **path**: str, required: The audio file path to save.
+  - **model**: TTS_MODEL, optional: The TTS model to use.
+    `[tts-1, tts-1-hd]`
+  - **voice**: TTS_VOICE, optional: The TTS voice to use.
+    `[alloy, echo, fable, onyx, nova, shimmer]`
+  - **format**: FILE_FORMAT, optional: The format of the audio file.
+    `[mp3, opus, aac, flac]`
+  - **speed**: float, optional: The speed of the audio file.
+    **Value Range**: `[0.25, 4.0]`
 
 Generate speech from text:
 
