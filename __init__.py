@@ -9,6 +9,7 @@ from .message import (AssistantMessage, Message, MessagesContainer,
 from .ability import Ability
 from ._tool_chunks_container import ToolChunksContainer
 
+import openai
 from openai import chat, Stream
 from openai._types import NotGiven
 from openai.types.chat import ChatCompletionChunk, ChatCompletionToolParam
@@ -50,14 +51,14 @@ class Agent:
 
         # stream output to a file
         >>> agent >> sys.stdout
-        # OR, stream_to file parameter is optional, it is stdout by default
-        >>> agent.stream_to()
+        # OR, stream file parameter is optional, it is stdout by default
+        >>> agent.stream()
 
         # write response to a file
         >>> with open('file', 'w') as f:
         ...    agent >> f
         ...    # OR
-        ...    agent.stream_to(f)
+        ...    agent.stream(f)
 
 
         # stream_to uses generate under the hood
@@ -246,6 +247,11 @@ class Agent:
 
         yield from self._stream_chunks(response)
 
+    @staticmethod
+    def set_api_token(token: Optional[str] = None):
+        """Set or unset the OpenAI API access token"""
+        openai.api_key = token
+
     def __lshift__(self, other):
         if isinstance(other, Message) or isinstance(other, MessagesContainer):
             self.messages.add(other)
@@ -266,3 +272,15 @@ class Agent:
         else:
             raise TypeError(f"Unsupported requesting for type: {type(other)}")
         return self
+
+    def __getitem__(self, name: str) -> Ability:
+        if name in self._abilities:
+            return self._abilities[name]
+        else:
+            raise ValueError(f"Unknown ability: {name}")
+
+    def __setitem__(self, name: str, ability: Ability):
+        if not isinstance(ability, Ability):
+            raise TypeError(
+                f"Ability must be of type 'Ability': {type(ability)}")
+        self._abilities[name] = ability

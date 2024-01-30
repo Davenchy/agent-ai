@@ -118,6 +118,18 @@ class Ability:
             }
         }
 
+    def __setitem__(self, name: str, arg: AbilityArgument):
+        if not isinstance(arg, AbilityArgument):
+            raise ValueError(f"Invalid argument type: {type(arg)}")
+
+        self.arguments[name] = arg
+
+    def __getitem__(self, name: str) -> AbilityArgument:
+        return self.arguments[name]
+
+    def __iter__(self):
+        return iter(self.arguments.values())
+
     @staticmethod
     def create(**arguments: Union[str, List[str]]):
         """Use to define a new ability from function declaration"""
