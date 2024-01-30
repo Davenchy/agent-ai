@@ -190,6 +190,11 @@ class MessagesContainer:
             self.messages.append(other)
         elif isinstance(other, MessagesContainer):
             self.messages.extend(other.messages)
+        elif type(other) is list:
+            self.add(*other)
         else:
             raise TypeError(f"Unsupported adding for type: {type(other)}")
         return self
+
+    def __getitem__(self, index):
+        return self.messages[index]
