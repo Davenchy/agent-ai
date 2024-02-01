@@ -1,0 +1,28 @@
+[project]
+name = "agent"
+version = "0.0.1"
+authors = [{ name = "Davenchy", email = "firon1222@gmail.com" }]
+description = "A wrapper classes and functions around the OpenAI API."
+readme = "README.md"
+requires-python = ">=3.8"
+keywords = ["openai", "agent", "ai", "chatbot", "chatgpt", "gpt"]
+license = { file = "LICENSE" }
+dependencies = ["openai", "pydub"]
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "License :: OSI Approved :: MIT License",
+  "Operating System :: OS Independent",
+  "Development Status :: 3 - Alpha",
+  "Intended Audience :: Developers",
+  "Topic :: Software Development :: Libraries :: Python Modules",
+  "Typing :: Typed",
+]
+
+[project.urls]
+Homepage = "https://github.com/davenchy/storyteller"
+"Bug Reports" = "https://github.com/davenchy/storyteller/issues"
+Source = "https://github.com/davenchy/storyteller"
+
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
