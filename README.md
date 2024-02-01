@@ -4,6 +4,16 @@ A collection of classes as a wrapper around OpenAI package.
 
 I created this project to build other projects and learn more about OpenAI API.
 
+## Install
+
+To install and use the package in your venv, do the following:
+
+- Make sure that pip and git are installed
+
+```sh
+pip install git+https://github.com/Davenchy/agent-ai.git
+```
+
 ## Index
 
 - [**Agent**](#agent-1): A wrapper around OpenAI ChatCompletion API.
