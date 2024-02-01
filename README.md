@@ -229,6 +229,31 @@ agent.add_abilities(ability)
 agent["get_environment_variable"] = ability
 ```
 
+### Ability.create Decorator
+
+Instead of using the **Ability** class, you can use the **Ability.create** decorator to create an **Ability** object.
+
+```python
+from agent.ability import Ability
+
+
+@Ability.create(name="The environment variable name, to get its value")
+def get_environment_variable(name: str) -> str:
+    """Get an environment variable by its name."""
+    value = os.getenv(name)
+    if value is not None:
+        return f"The value of the variable {name} is {value}"
+    else:
+        return f"The variable {name} is not set"
+```
+
+To use the decorator, you need to follow the following rules:
+
+- The function must return a string, also the `-> str` return annotation is required.
+- The function docstring is required, as it describes the ability behavior or why to use this ability.
+- The function arguments must have a type annotation.
+- For each function argument, you must define its description in the create decorator.
+
 ### Magic Function
 
 **magic** is a decorator that creates an **Agent** alias from instruction functions.
