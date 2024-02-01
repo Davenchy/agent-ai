@@ -19,6 +19,7 @@ pip install git+https://github.com/Davenchy/agent-ai.git
 - [**Agent**](#agent-1): A wrapper around OpenAI ChatCompletion API.
 - [**Ability**](#ability): A class that defined the agent abilities also it is a wrapper
   around the tools feature in OpenAI API.
+- [**Ability.create Decorator**](#abilitycreate-decorator): An alias for defining an Ability object.
 - [**Message**](#message): My custom definition of ChatCompletion API messages.
 - [**MessagesContainer**](#messagescontainer): To manage many **Message** objects.
 - [**magic**](#magic-function): A decorator that creates an Agent alias for any function.
