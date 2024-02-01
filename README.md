@@ -282,7 +282,8 @@ def generate_name(max_length: int = 8, min_length: int = 4,
     """A name generator."""
     return f"""You are a name generator.
 Generate a name of a {gender.value} that its characters length between \
-{min_length} and {max_length} characters in {language} language."""
+{min_length} and {max_length} characters in {language} language.
+Just response with the name without any extra text."""
 
 
 generate_name(language="French", gender=Gender.FEMALE)  # Aurélie
