@@ -75,7 +75,7 @@ with open('file', 'w') as f:
    agent.stream(f)
 
 
-# stream_to uses generate under the hood
+# stream uses generate under the hood
 # to manually stream response use the `generate` method
 for chunk in agent.generate():
     print(chunk, end="", flush=True)
