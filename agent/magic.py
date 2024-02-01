@@ -29,7 +29,7 @@ def magic(
         >>> @magic()
         >>> def rap_for(name: str) -> str:
         ...     return f'''You are a rap song writer
-        ... Write a song for a person called {}!'''.format(name)
+        ... Write a song for a person called {name}!'''
 
         >>> rap_for("Dylan")
         The generated rap song...
