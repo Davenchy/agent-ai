@@ -79,6 +79,22 @@ with open('file', 'w') as f:
 # to manually stream response use the `generate` method
 for chunk in agent.generate():
     print(chunk, end="", flush=True)
+# for a new line
+print()
+```
+
+For quick use:
+
+```python
+from agent import Agent
+
+agent = Agent("You are a helpful assistant")
+
+# Pass `UserMessage` and call `Agent.generate` method
+for chunk in agent("How are you?"):
+    print(chunk, end="", flush=True)
+# for a new line
+print()
 ```
 
 ### Message
